@@ -5,22 +5,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
-import com.example.demo.databinding.ActivityContactBinding;
 import com.example.demo.databinding.ActivityMainBinding;
-import com.example.demo.databinding.ActivityVoteBinding;
 
-public class VoteActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityVoteBinding binding = ActivityVoteBinding.inflate(getLayoutInflater());
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        this.setTitle("Article");
+        this.setTitle("Accueil");
 
-        binding.BtnArticleContact.setOnClickListener(new View.OnClickListener() {
+        binding.BtnAccueilArticle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), VoteActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        binding.BtnAccueilContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Contact.class);
