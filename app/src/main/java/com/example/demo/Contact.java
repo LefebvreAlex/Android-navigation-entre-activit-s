@@ -25,7 +25,7 @@ public class Contact extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
-
+                intent.putExtra("Nom", binding.EditNom.getText().toString());
             }
         });
 

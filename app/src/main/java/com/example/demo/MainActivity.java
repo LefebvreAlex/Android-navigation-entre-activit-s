@@ -18,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
         this.setTitle("Accueil");
+        binding.Roulette.setMaxValue(10);
+        binding.Roulette.setMinValue(0);
+
+
+        binding.AccueilNom.setText(getIntent().getStringExtra("Nom"));
 
         binding.BtnAccueilArticle.setOnClickListener(new View.OnClickListener() {
             @Override
